@@ -56,7 +56,7 @@ rm -r ArchInstallationScript part1.sh;
 
 #CHANGE ROOT INTO THE NEW SYSTEM
 chmod +x /mnt/part2.sh ;
-arch-chroot /mnt ;
+arch-chroot /mnt ./part2.sh;
 
 echo "Do you want reboot?" 
 
