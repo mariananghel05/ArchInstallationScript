@@ -60,7 +60,6 @@ select yn in "Yes" "No"; do
 		#END INSTALLATION 
                 systemctl enable NetworkManager;			
 		rm part2.sh ;
-		exit;
 		break;;
 
         No ) 
@@ -68,7 +67,6 @@ select yn in "Yes" "No"; do
 		#END OF INSTALLATION
 		systemctl enable NetworkManager;
 		rm part2.sh ;
-		exit;
 		break;
 
     esac
