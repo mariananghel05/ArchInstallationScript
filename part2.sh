@@ -59,14 +59,14 @@ select yn in "Yes" "No"; do
 		grub-mkconfig -o /boot/grub/grub.cfg;
 		#END INSTALLATION 
                 systemctl enable NetworkManager;			
-		rm part1.sh ;
+		rm part2.sh ;
 		break;;
 
         No ) 
 		grub-mkconfig -o /boot/grub/grub.cfg;
 		#END OF INSTALLATION
 		systemctl enable NetworkManager;
-		rm part1.sh ;
+		rm part2.sh ;
 		break;
 
     esac
