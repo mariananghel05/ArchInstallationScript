@@ -58,4 +58,23 @@ rm -r ArchInstallationScript part1.sh;
 chmod +x /mnt/part2.sh ;
 arch-chroot /mnt ;
 
+echo "Do you want reboot?" 
+
+select yn in "Yes" "No"; do
+
+    case $yn in
+
+        Yes )	umount -a ;	
+        	    reboot ;
+		          break ;;
+
+        No ) 
+		        echo "Ok. My job is done here. If you want to get back into sistem use arch-chroot. " ;
+		        echo "Don't forget to use 'umount -a' and 'reboot' to reboot" ; 
+		        break;
+
+    esac
+
+done
+
 
