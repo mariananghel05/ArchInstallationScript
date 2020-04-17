@@ -12,7 +12,7 @@ pacman --noconfirm -S nano ;
 
 #TIMEZONE
 
-ln -sf /usr/share/zoneinfo/Europe/Buchares /etc/localtime ;
+ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime ;
 
 #RUN HWCLOCK TO GENERATE /etc/adjtime
 
