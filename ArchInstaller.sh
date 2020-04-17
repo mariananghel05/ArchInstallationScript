@@ -1,6 +1,10 @@
 #This script is for 3 partitions (EFI/EXT4/SWAP). 
 #Change the partion names below()
 #USERNAME is your username write in lowcase letters
+#If you want to install alongside windows write the boot efi partition of windows(usualy has like 100mb) to WINDOWSEFIPARTITION variable below in variable section
+
+#VARIABLES
+
 EFIPARTITION="/dev/sda1"
 SWAPPARTITION="/dev/sda2"
 EXT4PARTITIO="/dev/sda3"
