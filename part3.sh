@@ -32,7 +32,7 @@ select yn in "Yes" "No"; do
 		sudo pacman --noconfirm -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader ;
 		sudo echo "load-module module-echo-cancel source_name=logitechsource source_properties=device.description=LogitechHD" >> /etc/pulse/default.pa ;
 		sudo echo "set-default-source logitechsource" >> /etc/pulse/default.pa ;
-		sudo pacman --noconfirm -S wine lutris steam ;
+		sudo pacman --noconfirm -S wine lutris steam lxterminal ;
 		git clone "https://aur.archlinux.org/skypeforlinux-stable-bin.git " ;
   		cd skypeforlinux-stable-bin/ ;
 		makepkg --noconfirm -si ;
