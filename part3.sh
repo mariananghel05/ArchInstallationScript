@@ -24,7 +24,7 @@ select yn in "Yes" "No"; do
 		cd ;
 		sudo rm -r optimus-manager ;
 		git clone "https://aur.archlinux.org/optimus-manager-qt.git" ;
-  		cd optimus-manager-qt ;
+  		cd optimus-manager-qt/ ;
 		makepkg --noconfirm -si ;
 		cd ;
 		sudo rm -r optimus-manager-qt ;
@@ -32,12 +32,81 @@ select yn in "Yes" "No"; do
 		sudo echo "load-module module-echo-cancel source_name=logitechsource source_properties=device.description=LogitechHD" >> /etc/pulse/default.pa ;
 		sudo echo "set-default-source logitechsource" >> /etc/pulse/default.pa ;
 		sudo pacman --noconfirm -S wine lutris steam ;
+		git clone "https://aur.archlinux.org/skypeforlinux-stable-bin.git " ;
+  		cd skypeforlinux-stable-bin/ ;
+		makepkg --noconfirm -si ;
+		cd ;
+		sudo rm -r skypeforlinux-stable-bin ;
 		echo "Oke. That it. Any way you have to check if E-sync is activated. I run the check command for you." ;
 		echo "This should be 524288 or bigger if You have E-sync, if You have lower then You have to install it." ;
 		echo "Google it!" ;
 		echo "Oke I run the commnad for You check the output below!" ;
 		ulimit -Hn ;
 		echo "Your output for command is up ^. Don't forger the HdajackRetask!" ;
+		
+		
+		echo "You can choose one of the Desktop enviroments or i3 window manager below or you can install on manualy."
+
+		select yn in "Xfce4" "KDE" "Gnome" "LXDE" "i3" "Nothing"; do
+
+    		case $yn in
+
+       		 Xfce4 )  sudo pacman --noconfirm -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter ;
+		 	  sudo systemctl enable lightdm ;
+		 	  echo "Oke your Xfce4 Desktop will run next time!" ;
+		 		break;;
+
+        	KDE )    sudo pacman --noconfirm -S plasma kde-applications sddm sddm-kcm ;
+			 sudo systemctl enable sddm ;
+			 echo "Oke Your Kde Destop is done and next time will run" ;
+			 echo "Don't forgget he can be buggie with some nvidia cards and/or drivers!" ;
+				break;;
+
+       		 Gnome ) sudo pacman --noconfirm -S gnome gdm ;
+		 	 sudo systemctl enable gdm;
+			 echo "Oke. Your Gnome is Ready to go, but You have to reboot before." ;
+		 		break;;
+
+        	LXDE ) sudo pacman --noconfirm -S lxde-common lxsession lightdm lightdm-gkt-greeter ;
+		       sudo systemctl enable lightdm ;
+		       echo "Your LXDE Desktop is muy byene. Reboot to try it!" ;
+				break;;
+
+        	i3 ) sudo pacman --noconfirm -S i3 lightdm lightdm-gtk-greeter ;
+		     sudo systemctl enable lightdm ;
+		     echo "Your i3 Window Manager Is Reade reboot to use it!" ;
+			break;;
+
+       		 Nothing ) echo "Don't install one"; break;
+
+
+    esac
+
+done
+
+		
+	echo "You are close to end all things do you want to set your nvidia car to run? If You don't next reboot Your Intel Graphics car will run!" 
+
+select yn in "Yes" "No"; do
+
+    case $yn in
+
+        Yes )	optimus-manager --set-startup nvidia ;
+        	    echo "Oke. Good luck" ;
+		          break ;;
+
+        No ) 
+		        echo "Ok. My job is done here" ; 
+		        break;
+
+    esac
+
+done
+	
+		
+		
+		
+		
 #End Of Script
 		break;;
 
