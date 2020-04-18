@@ -57,9 +57,10 @@ rm -r ArchInstallationScript part1.sh;
 
 #CHANGE ROOT INTO THE NEW SYSTEM
 chmod +x /mnt/part2.sh ;
+chmod +x /mnt/home/part3.sh ;
 arch-chroot /mnt ./part2.sh;
 
-echo "Do you want reboot?" 
+echo "Do you want reboot? (3rd script will be in home directory "part3.sh")" 
 
 select yn in "Yes" "No"; do
 
