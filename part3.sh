@@ -16,8 +16,7 @@ select yn in "Yes" "No"; do
 
 
         Yes )  echo "Oke. Your will, My hands!" ;
-		read -p "Enter your username that you used at installation"  USERNAME ;
-                cd /home/$USERNAME ;
+                cd /home/$USER ;
                 sudo pacman --noconfirm -S xorg ;
 		sudo pacman --noconfirm -S alsa alsa-tools pavucontrol pulseaudio vim ; 
 		git clone "https://aur.archlinux.org/optimus-manager.git" ;
