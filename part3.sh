@@ -73,7 +73,7 @@ select yn in "Yes" "No"; do
 		       echo "Your LXDE Desktop is muy byene. Reboot to try it!" ;
 				break;;
 
-        	i3 ) sudo pacman --noconfirm -S i3 lightdm lightdm-gtk-greeter ;
+        	i3 ) sudo pacman --noconfirm -S i3 dmenu lightdm lightdm-gtk-greeter ;
 		     sudo systemctl enable lightdm ;
 		     echo "Your i3 Window Manager Is Reade reboot to use it!" ;
 			break;;
