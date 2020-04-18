@@ -51,6 +51,7 @@ genfstab -U /mnt >> /mnt/etc/fstab ;
 git clone "https://github.com/mariananghel05/ArchInstallationScript" ;
 
 cp ArchInstallationScript/part2.sh /mnt/ ;
+cp ArchInstallationScript/part3.sh /mnt/home/ ;
 rm -r ArchInstallationScript part1.sh;
 
 
