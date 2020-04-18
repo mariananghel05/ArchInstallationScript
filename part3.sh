@@ -93,7 +93,9 @@ select yn in "Yes" "No"; do
 
     case $yn in
 
-        Yes )	optimus-manager --set-startup nvidia ;
+        Yes )	sudo systemctl enable optimus-manager ;
+                sudo systemctl start optimus-manager ;
+                optimus-manager --set-startup nvidia ;
         	    echo "Oke. Good luck" ;
 		          break ;;
 
