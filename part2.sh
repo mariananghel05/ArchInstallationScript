@@ -45,7 +45,7 @@ passwd ;
 
 #BOOTLOADER INSTALLATION
 
-pacman --noconfirm -S  grub efibootmgr mtools dialog networkmanager network-manager-applet wireless_tools os-prober dosfstools git ;
+pacman --noconfirm -S  grub efibootmgr mtools dialog networkmanager network-manager-applet base-devel wireless_tools os-prober dosfstools git ;
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCHLINUX  ;
 
 echo "Do you have a windows on your PC?(Select by number [1/2])" 
