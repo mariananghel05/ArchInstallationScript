@@ -31,7 +31,7 @@ select yn in "Yes" "No"; do
 		sudo pacman -S nvidia nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader ;
 		echo "load-module module-echo-cancel source_name=logitechsource source_properties=device.description=LogitechHD" >> /etc/pulse/default.pa ;
 		echo "set-default-source logitechsource" >> /etc/pulse/default.pa ;
-		sudo pacman -S wine lutris steam ;
+		sudo pacman --noconfirm -S wine lutris steam ;
 		echo "Oke. That it. Any way you have to check if E-sync is activated. I run the check command for you." ;
 		echo "This should be 524288 or bigger if You have E-sync, if You have lower then You have to install it." ;
 		echo "Google it!" ;
