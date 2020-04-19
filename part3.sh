@@ -78,7 +78,7 @@ select yn in "Yes" "No"; do
 		     echo "Your i3 Window Manager Is Reade reboot to use it!" ;
 			break;;
 
-                 Deepin ) sudo pacman --noconfirm -S deepin lightdm lightdm-gtj-greeter ;
+                 Deepin ) sudo pacman --noconfirm -S deepin lightdm lightdm-gtk-greeter ;
                           sudo systemctl enable lightdm ;
                           echo "Your Deepin Desktop is ready to roll so rock it a reboot" ;
                           break;;      
