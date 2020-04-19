@@ -48,7 +48,7 @@ select yn in "Yes" "No"; do
 		
 		echo "You can choose one of the Desktop enviroments or i3 window manager below or you can install on manualy."
 
-		select yn in "Xfce4" "KDE" "Gnome" "LXDE" "i3" "Nothing"; do
+		select yn in "Xfce4" "KDE" "Gnome" "LXDE" "i3" "Deepin" "Nothing"; do
 
     		case $yn in
 
@@ -77,6 +77,12 @@ select yn in "Yes" "No"; do
 		     sudo systemctl enable lightdm ;
 		     echo "Your i3 Window Manager Is Reade reboot to use it!" ;
 			break;;
+
+                 Deepin ) sudo pacman --noconfirm -S deepin lightdm lightdm-gtj-greeter ;
+                          sudo systemctl enable lightdm ;
+                          echo "Your Deepin Desktop is ready to roll so rock it a reboot" ;
+                          break;;      
+
 
        		 Nothing ) echo "Don't install one"; break;
 
