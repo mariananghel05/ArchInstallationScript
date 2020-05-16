@@ -11,7 +11,7 @@ WINDOWSEFIPARTITION="" ;
 pacman --noconfirm -S nano ;
 
 #MIRRORLIST ADJUST 
-pacman -S reflector ;
+pacman --noconfirm -S reflector ;
 reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist ;
 
 #TIMEZONE
