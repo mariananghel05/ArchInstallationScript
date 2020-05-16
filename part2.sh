@@ -10,6 +10,10 @@ WINDOWSEFIPARTITION="" ;
 
 pacman --noconfirm -S nano ;
 
+#MIRRORLIST ADJUST 
+pacman -S reflector ;
+reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist ;
+
 #TIMEZONE
 
 ln -sf /usr/share/zoneinfo/Europe/Bucharest /etc/localtime ;
