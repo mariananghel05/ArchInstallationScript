@@ -39,7 +39,9 @@ swapon $PARTITION ;
 mount /dev/sda3 /mnt ;
 mkdir /mnt/boot ;
 mount /dev/sda1 /mnt/boot/ ;
-
+#MIRRORLIST ADJUST 
+pacman -S reflector ;
+reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist ;
 #INSTALL THE ESSENTIAL PACKAGES
 
 pacstrap /mnt base linux linux-firmware ;
