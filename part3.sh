@@ -48,7 +48,7 @@ select yn in "Yes" "No"; do
 		
 		echo "You can choose one of the Desktop enviroments or i3 window manager below or you can install on manualy."
 
-		select yn in "Xfce4" "KDE" "Gnome" "LXDE" "i3" "Deepin" "Nothing"; do
+		select yn in "Xfce4" "KDE" "Gnome" "LXDE" "i3" "Deepin" "instantWM" "Nothing"; do
 
     		case $yn in
 
@@ -81,8 +81,17 @@ select yn in "Yes" "No"; do
                  Deepin ) sudo pacman --noconfirm -S deepin lightdm lightdm-gtk-greeter ;
                           sudo systemctl enable lightdm ;
                           echo "Your Deepin Desktop is ready to roll so rock it a reboot" ;
-                          break;;      
-
+                          break;; 
+		instantWM )
+			   cd ;
+			   git clone --depth=1 https://github.com/instantOS/instantWM.git ;
+  			   cd instantWM ;
+		    	   ./build.sh ;
+			   cd ;
+			   sudo rm -r instantWM ;
+			   sudo pacman --noconfirm -S lightdm lightdm-gkt-greeter ;
+		           sudo systemctl enable lightdm ;
+			   echo "Done" ;
 
        		 Nothing ) echo "Don't install one"; break;
 
